@@ -1,0 +1,9 @@
+#!/usr/bin/env dgsh
+
+echo "Hello," |
+{{
+    sed -r "s/(.*)/\1 from dgsh/"
+}} | cat
+
+# Should print: Hello, from dgsh
+# "echo" have 1 output, so multipipe block is also of one item, "cat" accepts any number of inputs
